@@ -1,10 +1,12 @@
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-        <h1>Titulo aún no definido</h1>
-    </div>
+    <>
+    <NavBar />
+    <h1>E-Commerce VideoJuegos</h1>
+    </>
   );
 }
 

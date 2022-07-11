@@ -1,0 +1,40 @@
+.navBar{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    p{
+        color: white;
+    }
+    svg{
+        color: rgb(255, 0, 0);
+        padding: 25px;
+        font-size: 3em;
+    }
+    .tituloNav {
+        color: rgb(255, 0, 0);
+    }
+    .divMenu{
+        display: flex;
+        align-items: center;
+        .menuNav {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            flex-wrap: wrap;
+            li{
+                margin: 0px 5px;
+                color: white;
+                a{
+                    text-decoration: none;
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+
+
