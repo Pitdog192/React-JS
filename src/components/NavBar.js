@@ -5,7 +5,7 @@ import '../Estilos/NavBar.scss';
 
 const NavBar = () => {
   return (
-    <div className="navBar">
+    <nav className="navBar">
         <FaSteam />
         <h1 className="tituloNav">NavBar</h1>
         <div className='divMenu'>
@@ -16,7 +16,7 @@ const NavBar = () => {
             <li><a href='navBar'>Novedades</a></li>
           </ul>
         </div>
-    </div>
+    </nav>
     
   )
 }
