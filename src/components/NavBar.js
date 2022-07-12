@@ -4,20 +4,21 @@ import '../Estilos/NavBar.scss';
 
 
 const NavBar = () => {
+
+  let listaNav = ["Lo más vendido", "Próximamente", "Ofertas", "Novedades"];
+
   return (
     <nav className="navBar">
       <FaSteam />
       <h1 className="tituloNav">NavBar</h1>
       <div className='divMenu'>
         <ul className="menuNav">
-          <li><a href='navBar'>Lo más vendido</a></li>
-          <li><a href='navBar'>Próximamente</a></li>
-          <li><a href='navBar'>Ofertas</a></li>
-          <li><a href='navBar'>Novedades</a></li>
+          {listaNav.map((el, index) => (
+            <li key={index}><a href='/'>{el}</a></li>
+          ))}
         </ul>
-      </div>
+      </div>  
     </nav>
-    
   )
 }
 
