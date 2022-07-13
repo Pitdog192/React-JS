@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-JS-Arroquigaray/static/css/main.33fe4e0b.css",
+    "main.js": "/React-JS-Arroquigaray/static/js/main.935b82f6.js",
+    "index.html": "/React-JS-Arroquigaray/index.html",
+    "main.33fe4e0b.css.map": "/React-JS-Arroquigaray/static/css/main.33fe4e0b.css.map",
+    "main.935b82f6.js.map": "/React-JS-Arroquigaray/static/js/main.935b82f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33fe4e0b.css",
+    "static/js/main.935b82f6.js"
+  ]
+}
