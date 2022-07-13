@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <FaSteam />
-      <h1 className="tituloNav">NavBar</h1>
+      <h1 className="tituloNav">E-Shop</h1>
       <div className='divMenu'>
         <ul className="menuNav">
           {listaNav.map((el, index) => (
