@@ -1,0 +1,60 @@
+//VARIABLES 
+$red : rgb(250,0,0);
+
+
+.navBar{
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    p{
+        color: white;
+    }
+    svg{
+        color: $red;
+        padding: 25px;
+        font-size: 3em;
+        margin: 10px 0px;
+    }
+    .tituloNav {
+        color: $red;
+        margin-top: 40px;
+        text-align: center;
+        font-size: 2em;
+    }
+    .divMenu{
+        display: flex;
+        align-items: center;
+        .menuNav {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            flex-wrap: wrap;
+            li{
+                margin: 10px 5px;
+                color: white;
+                background-color: $red;
+                width: 130px;
+                height: 35px;
+                line-height: 35px;
+                border-radius: 15px;
+                &:hover{
+                    background-color: #F0A924;
+                    transform: scale(1.1);
+                    text-decoration: underline;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+

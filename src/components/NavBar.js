@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaSteam } from "react-icons/fa";
-import '../Estilos/NavBar.scss';
 
 
 const NavBar = () => {
@@ -9,8 +8,10 @@ const NavBar = () => {
 
   return (
     <nav className="navBar">
-      <FaSteam />
-      <h1 className="tituloNav">E-Shop</h1>
+      <FaSteam>
+      <a href="https://developer.mozilla.org/"></a>
+      </FaSteam>
+      <h1 className="tituloNav">Venta de juegos digitales</h1>
       <div className='divMenu'>
         <ul className="menuNav">
           {listaNav.map((el, index) => (

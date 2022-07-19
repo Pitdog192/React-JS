@@ -1,11 +1,10 @@
-import './App.css';
 import NavBar from './components/NavBar';
+import './Estilos/App.scss';
 
 function App() {
   return (
     <>
     <NavBar />
-    <h1>E-Commerce VideoJuegos</h1>
     </>
   );
 }
