@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSteam } from "react-icons/fa";
+import CartWidget from './CartWidget/CartWidget';
 
 
 const NavBar = () => {
@@ -8,9 +9,7 @@ const NavBar = () => {
 
   return (
     <nav className="navBar">
-      <FaSteam>
-      <a href="https://developer.mozilla.org/"></a>
-      </FaSteam>
+      <FaSteam/>
       <h1 className="tituloNav">Venta de juegos digitales</h1>
       <div className='divMenu'>
         <ul className="menuNav">
@@ -19,6 +18,7 @@ const NavBar = () => {
           ))}
         </ul>
       </div>  
+      <CartWidget/>
     </nav>
   )
 }
