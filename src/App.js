@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import './Estilos/App.scss';
 
 function App() {
