@@ -1,0 +1,10 @@
+@import '../../Estilos/variables';
+
+.contenedorPrincipal{
+    height: calc(100vh - $height-header);
+    background-color: rgb(255, 238, 164);
+    .titulo{
+        background-color: $red;
+        text-align: center;
+    }
+}
