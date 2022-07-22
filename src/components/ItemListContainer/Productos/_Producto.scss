@@ -1,0 +1,13 @@
+@import '../../../Estilos/variables';
+
+.cardProduct {
+    width: calc(20% - 15px);
+    margin: auto;
+    height: 550px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px black;
+    font-size: 1.25em;
+    img {
+        width: 100%;
+    }
+}

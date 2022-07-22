@@ -2,10 +2,15 @@
 
 .contenedorPrincipal{
     height: calc(100vh - $height-header);
-    background-color: rgb(255, 238, 164);
+    width: calc(100vw - 25px);
+    margin: auto;
     .titulo{
         background-color: $red;
         text-align: center;
         color: white;
+    }
+    .divProductos{
+        display: flex;
+        flex-direction: row;
     }
 }
