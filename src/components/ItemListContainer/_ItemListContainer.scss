@@ -1,13 +1,16 @@
 @import '../../Estilos/variables';
 
 .contenedorPrincipal{
-    height: calc(100vh - $height-header);
+    height: calc(100vh - $height-header - 30px);
     width: calc(100vw - 25px);
     margin: auto;
     .titulo{
+        margin: 20px auto;
         background-color: $red;
         text-align: center;
         color: white;
+        width: 50%;
+        border-radius: 20px;
     }
     .divProductos{
         display: flex;

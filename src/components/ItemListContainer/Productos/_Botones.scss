@@ -4,7 +4,7 @@
     button{
         width: calc(100% - 40px);
         margin: auto;
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .contenedorBotones{
         display: flex;
@@ -14,11 +14,14 @@
             display: inline;
         }
         button{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
             width: 30px;
             height: 30px;
-            font-size: 1.1em;
+            font-size: 0.9em;
             margin: auto;
-            line-height: 30px;
         }
     }
 }
