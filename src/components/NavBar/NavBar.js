@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaSteam } from "react-icons/fa";
-import CartWidget from './CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 
 const NavBar = () => {

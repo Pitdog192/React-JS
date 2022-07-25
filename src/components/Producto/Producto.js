@@ -1,4 +1,4 @@
-import Botones from './Botones';
+import Botones from '../Botones/Botones';
 
 const Producto = ({ data }) => {
   const { imagen, nombre, precio, stock } = data;
