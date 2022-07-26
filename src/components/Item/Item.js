@@ -1,7 +1,7 @@
 import Botones from '../Botones/Botones';
 
-const Producto = ({ data }) => {
-  const { imagen, nombre, precio, stock } = data;
+const Producto = ({data}) => {    
+const {imagen, nombre, precio, stock} = data;
   return (
     <div className="cardProduct">
       <img alt="Imagen de producto" src={imagen} />
