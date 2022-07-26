@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React-JS-Arroquigaray/static/css/main.03d14da9.css",
-    "main.js": "/React-JS-Arroquigaray/static/js/main.92adaf01.js",
+    "main.css": "/React-JS-Arroquigaray/static/css/main.5e6b1f90.css",
+    "main.js": "/React-JS-Arroquigaray/static/js/main.b7d20606.js",
     "index.html": "/React-JS-Arroquigaray/index.html",
-    "main.03d14da9.css.map": "/React-JS-Arroquigaray/static/css/main.03d14da9.css.map",
-    "main.92adaf01.js.map": "/React-JS-Arroquigaray/static/js/main.92adaf01.js.map"
+    "main.5e6b1f90.css.map": "/React-JS-Arroquigaray/static/css/main.5e6b1f90.css.map",
+    "main.b7d20606.js.map": "/React-JS-Arroquigaray/static/js/main.b7d20606.js.map"
   },
   "entrypoints": [
-    "static/css/main.03d14da9.css",
-    "static/js/main.92adaf01.js"
+    "static/css/main.5e6b1f90.css",
+    "static/js/main.b7d20606.js"
   ]
 }
