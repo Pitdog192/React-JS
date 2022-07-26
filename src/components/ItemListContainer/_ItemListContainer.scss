@@ -1,7 +1,7 @@
 @import '../../Estilos/variables';
 
 .contenedorPrincipal{
-    height: calc(100vh - $height-header - 30px);
+    height: 100vh;
     width: calc(100vw - 25px);
     margin: auto;
     .titulo{
@@ -13,7 +13,6 @@
         border-radius: 20px;
     }
     .divProductos{
-        display: flex;
-        flex-direction: row;
+        @extend %flex-row;
     }
 }

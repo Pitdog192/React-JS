@@ -1,2 +1,16 @@
 $height-header: 120px;
 $red: rgb(250,0,0);
+
+@mixin noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+}  

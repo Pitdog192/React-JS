@@ -7,21 +7,36 @@
         font-size: 0.9em;
     }
     .contenedorBotones{
-        display: flex;
-        flex-direction: row;
+        @extend %flex-row;
         justify-content: space-around;
         p{
             display: inline;
         }
         button{
-            display: flex;
-            flex-direction: row;
+            @extend %flex-row;
             align-items: center;
             justify-content: center;
             width: 30px;
             height: 30px;
             font-size: 0.9em;
             margin: auto;
+            @include noSelect;
+            border: 0.1px solid black;
+            border-radius: 13px;
+            &:nth-child(1){
+                background-color: rgb(245, 126, 126);
+                &:hover{
+                    background-color: rgb(255, 88, 88);
+                    transform: scale(1.05);
+                }
+            }
+            &:nth-child(3){
+                background-color: rgb(140, 247, 140);
+                &:hover{
+                    background-color: rgb(99, 253, 99);
+                    transform: scale(1.05);
+                }
+            }
         }
     }
 }

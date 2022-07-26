@@ -27,13 +27,6 @@ const Items = [
         precio: 152391,
         stock:3
     },
-    {
-        id: 5,
-        imagen: "https://mexx-img-2019.s3.amazonaws.com/40105_2.jpeg",
-        nombre: "PC ARMADA MX36 Amd Ryzen 5 5600G-8Gb",
-        precio: 85244,
-        stock:5
-    },
 ]
 
 export default Items
