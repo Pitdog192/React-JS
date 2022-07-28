@@ -1,7 +1,5 @@
 import Item from '../Item/Item';
 
-
-
 const ItemList = ({dataProductos}) => {
     return (
         <>
