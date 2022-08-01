@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import Items from "../../utilities/ItemMock";
 
-const Botones = ({dataProd}) => {
-    const {stock, precio} = dataProd;
+const Botones = ({idParam}) => {
+
+    // eslint-disable-next-line eqeqeq
+    const parametroBoton = Items.find(el => idParam == el.id);
+
+    const {stock, precio} = parametroBoton;
     const [contador, setContador] = useState(1);
     const [precioTotal, setPrecio] = useState(precio);
-    
+
     const addStock = () => {
         if(stock > contador ) {
             setContador(contador + 1);
@@ -18,7 +23,7 @@ const Botones = ({dataProd}) => {
         setPrecio(precioTotal - precio)
       }
     };
-
+    
     return (
         <div className='contenedorTotal'>
             <div className="contenedorBotones">
@@ -26,8 +31,8 @@ const Botones = ({dataProd}) => {
                 <p>Agregar:{contador}</p>
                 <button onClick={addStock}>+</button>
             </div>
-            <button>Agregar al carrito</button>
             <p>Total: ${precioTotal}</p>
+            <button>Agregar al carrito</button>
         </div>
     )
 }

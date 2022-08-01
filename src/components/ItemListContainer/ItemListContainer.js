@@ -1,33 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
-import Items from '../../utilities/ItemMock';
-import ItemDetail from '../../utilities/ItemDetail';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { useParams } from 'react-router-dom'; 
 
-const ItemListContainer = ({greeting}) => {
 
-    const [listDetail, setListDetail] = useState([]);
+const ItemListContainer = ({title, data}) => {
+    const {category} = useParams();
+    console.log(category);
+
     const [listaProductos, setListaProductos] = useState([]);
 
-    const productDetail = () => new Promise ((resolve) => {
-        setTimeout(() => {resolve(ItemDetail)}, 2000)
-    })
-
-    useEffect(() => {
-        const detailProm = async () => {
-            try {
-                const correcto = await productDetail()
-                setListDetail(correcto)
-            }
-            catch {
-                console.log("Error de detalle")
-            }
-        }
-        detailProm();
-    },[])
-
     const productPromise = () => new Promise ((resolve) => {
-        setTimeout(()=>{resolve(Items)},2000)
+        setTimeout(()=>{resolve(data)},2000)
     });
 
     useEffect(() => {
@@ -41,16 +24,14 @@ const ItemListContainer = ({greeting}) => {
             }
         }
         productProm();
-    },[])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        },[])
 
     return (
         <div className="contenedorPrincipal">
-            <h1 className="titulo"> {greeting} </h1>
+            <h1 className="titulo"> {title} </h1>
             <div className='divProductos'>
                 <ItemList dataProductos={listaProductos} />
-            </div>
-            <div>
-                <ItemDetailContainer dataDetail={listDetail}/>
             </div>
         </div> 
     )

@@ -1,21 +1,20 @@
 import React from 'react';
 import { FaSteam } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 
-
 const NavBar = () => {
-
-  let listaNav = ["Lo más vendido", "Próximamente", "Ofertas", "Novedades"];
-
   return (
     <nav className="navBar">
-      <FaSteam/>
+      <div className='brandSvg'><Link to="/"><FaSteam></FaSteam></Link></div>
       <h1 className="tituloNav">Venta de juegos digitales</h1>
       <div className='divMenu'>
         <ul className="menuNav">
-          {listaNav.map((el, index) => (
-            <li key={index}><a href='/'>{el}</a></li>
-          ))}
+          <li><Link to="/"><button>Home</button></Link></li>
+          <li><Link to="/contact"><button>Contacto</button></Link></li>
+          <li><Link to="/:Gama Baja"><button>Gama Baja</button></Link></li>
+          <li><Link to="/:Gama Media"><button>Gama Media</button></Link></li>
+          <li><Link to="/:Gama Alta"><button>Gama Alta</button></Link></li>
         </ul>
       </div>  
       <CartWidget/>

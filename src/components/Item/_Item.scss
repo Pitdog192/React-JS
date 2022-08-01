@@ -1,15 +1,24 @@
 @import '../../Estilos/variables';
 
-.cardProduct {
+a{
+    height: 470px;
     width: calc(15% - 15px);
     margin: auto;
-    height: 470px;
-    padding: 20px;
-    box-shadow: 4px 4px 4px black;
-    font-size: 1.25em;
-    text-align: center;
-    border: 1px solid rgba($color: #000000, $alpha: 0.1);
-    img {
-        width: 80%;
+    text-decoration: none;
+    color: black;
+    .cardProduct {
+        width: 100%;
+        height: 470px;
+        padding: 20px;
+        box-shadow: 4px 4px 4px black;
+        font-size: 1.25em;
+        text-align: center;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        img {
+            width: 80%;
+        }
+        .textoPrecio{
+            font-size: 1.3em;
+        }
     }
 }

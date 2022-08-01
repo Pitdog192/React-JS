@@ -1,12 +1,45 @@
-const ItemDetailContainer = ({ dataDetail }) => {
-  const { nombre, precio, detalle, imagen } = dataDetail;
+import ItemDetail from "../ItemDetail/ItemDetail";
+import {useState, useEffect} from 'react';
+import Items from "../../utilities/ItemMock";
+import { useParams } from "react-router-dom";
+
+
+const ItemDetailContainer = () => {
+
+  const [detailList, setDetailList] = useState([]);
+  const [paramItem, setParamItem] = useState({});
+  const {id} = useParams();
+
+  const promiseDetail = () => new Promise ((resolve) => {
+    setTimeout(() => {
+      resolve(Items)
+    }, 2000)
+  })
+
+  useEffect(() => {
+    const asynDetail = async () => {
+      try {
+        const correcto = await promiseDetail()
+        setDetailList(correcto)
+      }
+      catch{
+        console.log("Error: El producto no existe")
+      }
+    }
+    asynDetail();
+    // eslint-disable-next-line array-callback-return
+    detailList.some((item) => {
+      if (item.id === parseInt(id)) {
+        setParamItem(item)
+        return item
+      }
+    })
+  }, [detailList, id])
+
   return (
-    <div className="detailContainer">
-      <h3>{nombre}</h3>
-      <img src={imagen} alt="Imagen de detalle" />
-      <p>{detalle}</p>
-      <p>Precio: ${precio}</p>
-    </div>
+      <div className="detailContainer">
+        <ItemDetail detailItem={paramItem} idParam={id}/>
+      </div>
   );
 };
 

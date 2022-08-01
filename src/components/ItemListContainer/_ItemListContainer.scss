@@ -14,5 +14,6 @@
     }
     .divProductos{
         @extend %flex-row;
+        height: 60vh;
     }
 }

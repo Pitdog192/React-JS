@@ -4,18 +4,22 @@
     width: 100%;
     height: $height-header;
     @extend %flex-row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: black;
     p{
         color: white;
     }
-    svg{
-        color: $red;
-        padding: 25px;
-        font-size: 3em;
-        margin: 10px 0px;
-        &:hover{
-            transform: scale(1.2);
+    .brandSvg{
+        margin: none;
+        width: 50px;
+        svg{
+            color: $red;
+            padding: 25px;
+            font-size: 3em;
+            margin: 10px 0px;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
     .tituloNav {
@@ -32,26 +36,26 @@
             list-style: none;
             flex-wrap: wrap;
             li{
-                margin: 10px 5px;
-                color: white;
-                background-color: $red;
                 width: 130px;
                 height: 45px;
-                line-height: 45px;
-                border-radius: 15px;
-                &:hover{
-                    background-color: #F0A924;
-                    transform: scale(1.1);
-                    text-decoration: underline;
-                }
-                a{
-                    font-size: 1.15em;
-                    text-decoration: none;
+                margin: 0px 5px;
+                button{
                     color: white;
-                    display: block;
-                    text-align: center;
+                    background-color: $red;
+                    width: 130px;
+                    height: 45px;
+                    line-height: 45px;
+                    border-radius: 15px;
+                    font-size: 1.2em;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #F0A924;
+                        transform: scale(1.1);
+                        text-decoration: underline;
+                    }
                 }
             }
+
         }
     }
 }
