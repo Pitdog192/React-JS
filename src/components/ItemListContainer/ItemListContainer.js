@@ -6,14 +6,18 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = ({title}) => {
     
     const [listaProductos, setListaProductos] = useState([]);
+    const [tituloContainer, setTituloContainer] = useState('');
     const {category} = useParams();
+
 
     const productPromise = () => new Promise ((resolve) => {
         setTimeout(()=>{
             if(category){
                 const categoryFilter = Items.filter((itm) => itm.categoria === category );
+                setTituloContainer(category);
                 resolve(categoryFilter)
             } else {
+                setTituloContainer('Todos los productos');
                 resolve(Items)
             }
         },2000)
@@ -37,7 +41,7 @@ const ItemListContainer = ({title}) => {
         <div className="contenedorPrincipal">
             <h1 className="titulo"> {title} </h1>
             <div className='divProductos'>
-                <ItemList dataProductos={listaProductos} categoryTitle={category}/>
+                <ItemList dataProductos={listaProductos} categoryTitle={tituloContainer}/>
             </div>
         </div> 
     )
