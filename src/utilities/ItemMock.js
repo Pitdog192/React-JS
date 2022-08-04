@@ -5,7 +5,7 @@ const Items = [
         nombre: "PC GAMER VIEWSONIC",
         precio: 120000,
         stock: 8,
-        category: "Gama Baja",
+        categoria: "Gama Baja",
         detalle: "Contiene 8GB de memoria Ram, No incluye monitor, Procesador Intel Core i3-7100 3.90GHz, Windows 10 de regalo"
     },
     {
@@ -14,7 +14,8 @@ const Items = [
         nombre: "PC GAMER GM 220T I5 RTX 3060",
         precio: 419999,
         stock:2,
-        category: "Gama Alta"
+        categoria: "Gama Alta",
+        detalle: "Contiene 8GB de memoria Ram, No incluye monitor, Procesador Intel Core i3-7100 3.90GHz, Windows 10 de regalo"
     },
     {
         id: 3,
@@ -22,7 +23,8 @@ const Items = [
         nombre: "PC ARMADA MX29 Amd Ryzen 7 4750G-32Gb-RTX3060Ti",
         precio: 309546,
         stock:4,
-        category: "Gama Alta",
+        categoria: "Gama Alta",
+        detalle: "Contiene 8GB de memoria Ram, No incluye monitor, Procesador Intel Core i3-7100 3.90GHz, Windows 10 de regalo"
     },
     {
         id: 4,
@@ -30,7 +32,8 @@ const Items = [
         nombre: "PC ARMADA MX15 Intel Core i710700KF-8Gb-GT730 2Gb",
         precio: 152391,
         stock:3,
-        category: "Gama Media"
+        categoria: "Gama Media",
+        detalle: "Contiene 8GB de memoria Ram, No incluye monitor, Procesador Intel Core i3-7100 3.90GHz, Windows 10 de regalo"
     },
 ]
 

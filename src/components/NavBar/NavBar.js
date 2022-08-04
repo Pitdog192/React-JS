@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
+  const categorias = ["Gama Baja", "Gama Media", "Gama Alta"];
   return (
     <nav className="navBar">
       <div className='brandSvg'><Link to="/"><FaSteam></FaSteam></Link></div>
@@ -12,9 +13,8 @@ const NavBar = () => {
         <ul className="menuNav">
           <li><Link to="/"><button>Home</button></Link></li>
           <li><Link to="/contact"><button>Contacto</button></Link></li>
-          <li><Link to="/:Gama Baja"><button>Gama Baja</button></Link></li>
-          <li><Link to="/:Gama Media"><button>Gama Media</button></Link></li>
-          <li><Link to="/:Gama Alta"><button>Gama Alta</button></Link></li>
+          <li><Link to="/products"><button>Productos</button></Link></li>
+          {categorias.map((el, index) => <li key={index}><Link to={`/products/${el}`}><button>{`${el}`}</button></Link></li>)}
         </ul>
       </div>  
       <CartWidget/>

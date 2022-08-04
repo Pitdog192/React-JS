@@ -8,13 +8,13 @@ const ItemDetail = ({detailItem, idParam}) => {
     setDatos(detailItem);
   },[detailItem]);
   
-  const {nombre, id, imagen, precio} = datos;
+  const {nombre, imagen, precio, detalle} = datos;
   return (
     <div className="itemDetail">
         <h3>{nombre}</h3>
-        <h4>{id}</h4>
         <img src={imagen} alt="Imagen de detalle" />
-        <p>Precio: ${precio}</p>
+        <p className='detalleProd'>{detalle}</p>
+        <p className='detallePrecio'>Precio: ${precio}</p>
         <Botones dataProd={datos} idParam={idParam}/>
     </div>
   )

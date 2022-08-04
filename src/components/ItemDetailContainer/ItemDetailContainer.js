@@ -37,9 +37,9 @@ const ItemDetailContainer = () => {
   }, [detailList, id])
 
   return (
-      <div className="detailContainer">
+      <>
         <ItemDetail detailItem={paramItem} idParam={id}/>
-      </div>
+      </>
   );
 };
 

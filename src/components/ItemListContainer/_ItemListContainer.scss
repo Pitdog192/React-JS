@@ -14,6 +14,6 @@
     }
     .divProductos{
         @extend %flex-row;
-        height: 60vh;
+        height: calc(100vh - $height-header);
     }
 }

@@ -4,7 +4,8 @@ import './Estilos/App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Contact from './pages/Contact';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Error from './components/Error/Error'
+import Error from './components/Error/Error';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
 
@@ -13,9 +14,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/Contact' element={<Contact />}/>
+        <Route path='/Contact' element={<Contact/>}/>
         <Route path='/Home/:id' element={<ItemDetailContainer/>}/>
-        <Route path='/:category' element={<Home/>}/>
+        <Route path='/products' element={<ItemListContainer/>}/>
+        <Route path='/products/:category' element={<ItemListContainer/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
     </BrowserRouter>
