@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Items from "../../utilities/ItemMock";
 
-const Botones = ({idParam}) => {
+const ItemCount = ({idParam, itemQuantity}) => {
 
     // eslint-disable-next-line eqeqeq
     const parametroBoton = Items.find(el => idParam == el.id);
-
     const {stock, precio} = parametroBoton;
     const [contador, setContador] = useState(1);
     const [precioTotal, setPrecio] = useState(precio);
@@ -18,12 +17,16 @@ const Botones = ({idParam}) => {
     };
 
     const removeStock = () => {
-      if(stock >= contador && contador > 1){
-        setContador(contador - 1);
-        setPrecio(precioTotal - precio)
-      }
+        if(stock >= contador && contador > 1){
+            setContador(contador - 1);
+            setPrecio(precioTotal - precio)
+        }
     };
     
+    const onAdd = () => {
+        itemQuantity(contador)
+    };
+
     return (
         <div className='contenedorTotal'>
             <div className="contenedorBotones">
@@ -32,9 +35,9 @@ const Botones = ({idParam}) => {
                 <button onClick={addStock}>+</button>
             </div>
             <p>Total: ${precioTotal}</p>
-            <button>Agregar al carrito</button>
+            <button onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 }
 
-export default Botones
+export default ItemCount
