@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
   const promiseDetail = () => new Promise ((resolve) => {
     setTimeout(() => {
       resolve(Items)
-    }, 2000)
+    }, 20)
   })
 
   useEffect(() => {

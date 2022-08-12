@@ -20,7 +20,7 @@ const ItemListContainer = ({title}) => {
                 setTituloContainer('Todos los productos');
                 resolve(Items)
             }
-        },2000)
+        },20)
     });
 
     useEffect(() => {

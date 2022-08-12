@@ -1,0 +1,27 @@
+.divCarrito{
+    @extend %flex-row;
+    p{
+        justify-content: center;
+    }
+    svg{
+        color: $red;
+        padding: 25px;
+        font-size: 3em;
+        margin: 10px 0px;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    .cartDiv{
+        background-color: white;
+        font-size: .7em;
+        height: 250px;
+        width: 150px;
+        img{
+            width: 100%;
+        }
+        p{
+            color:black
+        }
+    }
+}

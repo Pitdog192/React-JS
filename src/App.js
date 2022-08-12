@@ -7,22 +7,25 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error from './components/Error/Error';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartComponent from './components/CartComponent/CartComponent';
+import CartProvider from './Context/CartContext';
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/Contact' element={<Contact/>}/>
-        <Route path='/Home/:id' element={<ItemDetailContainer/>}/>
-        <Route path='/products' element={<ItemListContainer/>}/>
-        <Route path='/products/:category' element={<ItemListContainer/>}/>
-        <Route path='*' element={<Error/>}/>
-        <Route path='/cart' element={<CartComponent/>}/>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/Contact' element={<Contact/>}/>
+          <Route path='/Home/:id' element={<ItemDetailContainer/>}/>
+          <Route path='/products' element={<ItemListContainer/>}/>
+          <Route path='/products/:category' element={<ItemListContainer/>}/>
+          <Route path='*' element={<Error/>}/>
+          <Route path='/cart' element={<CartComponent/>}/>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

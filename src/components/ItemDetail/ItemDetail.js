@@ -1,8 +1,9 @@
 import ItemCount from '../ItemCount/ItemCount';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({detailItem, idParam}) => {
+  
   const [datos, setDatos] = useState({});
   const [itemQuantity, setItemQuantity] = useState(0);
   
