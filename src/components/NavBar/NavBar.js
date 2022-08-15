@@ -1,10 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
 import { FaSteam } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import { CartContext } from "../../Context/CartContext";
 
 const NavBar = () => {
   const categorias = ["Gama Baja", "Gama Media", "Gama Alta"];
+  const { totalProductos } = useContext(CartContext);
   return (
     <nav className="navBar">
       <div className='brandSvg'><Link to="/"><FaSteam></FaSteam></Link></div>
@@ -17,7 +20,7 @@ const NavBar = () => {
           {categorias.map((el, index) => <li key={index}><Link to={`/products/${el}`}><button>{`${el}`}</button></Link></li>)}
         </ul>
       </div>  
-      <CartWidget/>
+      {totalProductos > 0 ? <CartWidget/> : <></>}
     </nav>
   )
 }

@@ -1,23 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext} from 'react';
 import Items from "../../utilities/ItemMock";
 import { CartContext } from '../../Context/CartContext';
 
 const ItemCount = ({idParam, itemQuantity, dataProd}) => {
 
     //USO DEL CONTEXTO
-    const { addProductCart, setPrecioTotalCarrito, precioTotalCarrito } = useContext(CartContext);
-
+    const { addProductCart} = useContext(CartContext);
+    const {nombre, imagen, id, categoria} = dataProd;
     // eslint-disable-next-line eqeqeq
     const parametroBoton = Items.find(el => idParam == el.id);
+    const {stock, precio} = parametroBoton;
     const [contador, setContador] = useState(1);
     const [precioTotal, setPrecioTotal] = useState(precio);
-    const [stockProducto, setStockProducto] = useState();
-    
-    useEffect(() => {
-        setStockProducto(stock)
-    }, []);
-
-    console.log("Stock del producto:", stockProducto)
 
     const addStock = () => {
         if(stock > contador ) {
@@ -32,10 +26,6 @@ const ItemCount = ({idParam, itemQuantity, dataProd}) => {
             setPrecioTotal(precioTotal - precio);
         }
     };
-    
-    const precioCarritoTotal = precio * contador;
-
-    const {nombre, imagen, id, categoria, stock, precio} = dataProd;
 
     //INFORMACION QUE SE LE ENVIA AL CARRITO
     const productoDelCarrito = {
@@ -45,23 +35,15 @@ const ItemCount = ({idParam, itemQuantity, dataProd}) => {
         id,
         categoria,
         contador,
-        precioCarritoTotal,
         precioTotal,
-        stock
+        stock,
     }
 
 
     //FUNCION PARA AÑADIR PRODUCTOS AL CARRITO Y ASIGNAR LA CANTIDAD DE PRODUCTOS
     const onAdd = (producto) => {
         itemQuantity(producto.contador)
-        if(producto.stock >= producto.contador){
-            setStockProducto(producto.stock - producto.contador)
-            console.log("stock del producto luego del onadd", stockProducto)
-            addProductCart(producto)
-            setPrecioTotalCarrito(precioTotalCarrito + producto.precioTotal)
-        } else{
-            console.log("No hay mas stock")
-        }
+        addProductCart(producto)
     };
 
     return (

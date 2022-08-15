@@ -4,7 +4,7 @@ import { CartContext } from "../../Context/CartContext";
 
 const CartWidget = () => {
     
-    const {cartProducts, clear, singleDelete, precioTotalCarrito} = useContext(CartContext);
+    const {cartProducts, clear, singleDelete, precioTotalCarrito, totalProductos} = useContext(CartContext);
 
     // //ABRE Y CIERRA EL MODAL DEL CARRITO
     // const openCart = () => {
@@ -18,16 +18,16 @@ const CartWidget = () => {
 
     return (
         <div className="divCarrito">
-        <p>{cartProducts.length}</p>
+        <p>{totalProductos}</p>
         <FiShoppingCart/>
         {cartProducts.map(producto => {
                 return(
                     <div className="cartDiv" key={producto.id}>
                         <h4>{producto.nombre}</h4>
                         <p>Precio: ${producto.precio}</p>
-                        <p>Cantidad de productos: {producto.contador}</p>
+                        <p>Cantidad de productos: {producto.stockUsadoCarrito}</p>
                         <img src={producto.imagen} alt="imagen del producto en el carrito"/>
-                        <button onClick={() => singleDelete(producto.id, producto.precioTotal, producto.stock)}>X</button>
+                        <button onClick={() => singleDelete(producto)}>X</button>
                     </div>
                 )
             })}

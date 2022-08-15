@@ -1,0 +1,19 @@
+.carTotalComponent{
+    margin: 20px;
+    .carTotal {
+        display: flex;
+        flex-direction: row;
+        width: calc(100% - 10px);
+        margin: auto;
+        padding: 10px;
+        .carComponent{
+            width: 20%;
+            height: fit-content;
+            border: 1px solid black;
+            margin: 5px;
+            img{
+                width: calc(100% - 5px);
+            }
+        }
+    }
+}

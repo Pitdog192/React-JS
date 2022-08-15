@@ -4,25 +4,38 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([]);
+    const [totalProductos, setTotalProductos] = useState(0);
     const [precioTotalCarrito, setPrecioTotalCarrito] = useState(0);
     
     const addProductCart = (products) => {
         const obtenerProd = cartProducts.find(productoEnCarrito => productoEnCarrito.id === products.id)
+        products.stockUsadoCarrito = 0
         if (!obtenerProd){
+            setPrecioTotalCarrito(precioTotalCarrito + products.precioTotal)
             setCartProducts(cartProducts => [...cartProducts, products])
-        } else if (products.stock > products.contador) {
-            obtenerProd.contador = obtenerProd.contador + products.contador
-        }
+            setTotalProductos(totalProductos + products.contador)
+            if (products.stock > 0) {
+                setPrecioTotalCarrito(precioTotalCarrito + products.precioTotal)
+                setTotalProductos(totalProductos + products.contador)
+                products.stockUsadoCarrito += products.contador
+                }
+            } 
     }
 
-    const clear = () => setCartProducts([]);
+    const clear = () => {
+        setCartProducts([]);
+        setTotalProductos(totalProductos - totalProductos)
+        setPrecioTotalCarrito(precioTotalCarrito - precioTotalCarrito)
+    };
 
-    const singleDelete = (id, precioTotalProducto) => {
-        const borraProducto = cartProducts.filter(producto => producto.id !== id);
-        setCartProducts(borraProducto);
+    const singleDelete = (productoParaBorrar) => {
+        const borraProducto = cartProducts.filter(producto => producto.id !== productoParaBorrar.id);
         if (borraProducto){
-            setPrecioTotalCarrito(precioTotalCarrito - precioTotalProducto)
+            setTotalProductos(totalProductos - productoParaBorrar.contador)
+            setPrecioTotalCarrito(precioTotalCarrito - productoParaBorrar.precioTotal)
+            productoParaBorrar.stockCarrito = productoParaBorrar.stock
         }
+        setCartProducts(borraProducto);
     }  
 
     const data = {
@@ -30,8 +43,8 @@ const CartProvider = ({children}) => {
         addProductCart,
         clear,
         singleDelete,
-        setPrecioTotalCarrito,
-        precioTotalCarrito,
+        totalProductos,
+        precioTotalCarrito
     }
     return (
         <CartContext.Provider value={data}>
