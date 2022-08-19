@@ -1,44 +1,33 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import {useState, useEffect} from 'react';
-import Items from "../../utilities/ItemMock";
 import { useParams } from "react-router-dom";
-
+import db from '../../utils/firebaseConfig';
+import { doc, getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
-  const [detailList, setDetailList] = useState([]);
   const [paramItem, setParamItem] = useState({});
   const {id} = useParams();
 
-  const promiseDetail = () => new Promise ((resolve) => {
-    setTimeout(() => {
-      resolve(Items)
-    }, 20)
-  })
+    const getProduct = async () => {
+      const getdoc = doc(db, 'prods', id)  
+      const docSnapshot = await getDoc(getdoc)
+      let producto = docSnapshot.data()
+      producto.id = docSnapshot.id
+      return producto
+    }
 
   useEffect(() => {
-    const asynDetail = async () => {
-      try {
-        const correcto = await promiseDetail()
-        setDetailList(correcto)
-      }
-      catch{
-        console.log("Error: El producto no existe")
-      }
-    }
-    asynDetail();
-    // eslint-disable-next-line array-callback-return
-    detailList.some((item) => {
-      if (item.id === parseInt(id)) {
-        setParamItem(item)
-        return item
-      }
+    getProduct()
+    .then((resp)=>{
+      setParamItem(resp)
     })
-  }, [detailList, id])
+    // eslint-disable-next-line
+  }, [id])
 
   return (
       <>
-        <ItemDetail detailItem={paramItem} idParam={id}/>
+        <ItemDetail detailItem={paramItem}/>
       </>
   );
 };

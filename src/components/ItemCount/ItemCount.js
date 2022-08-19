@@ -1,17 +1,14 @@
-import React, { useState, useContext} from 'react';
-import Items from "../../utilities/ItemMock";
+import React, { useState, useContext, useEffect} from 'react';
 import { CartContext } from '../../Context/CartContext';
 
-const ItemCount = ({idParam, itemQuantity, dataProd}) => {
+const ItemCount = ({itemQuantity, dataProd}) => {
 
     //USO DEL CONTEXTO
     const { addProductCart} = useContext(CartContext);
-    const {nombre, imagen, id, categoria} = dataProd;
-    // eslint-disable-next-line eqeqeq
-    const parametroBoton = Items.find(el => idParam == el.id);
-    const {stock, precio} = parametroBoton;
+    const {nombre, imagen, id, categoria, precio, stock} = dataProd;
     const [contador, setContador] = useState(1);
-    const [precioTotal, setPrecioTotal] = useState(precio);
+    const [precioTotal, setPrecioTotal] = useState(0);
+
 
     const addStock = () => {
         if(stock > contador ) {
@@ -26,6 +23,10 @@ const ItemCount = ({idParam, itemQuantity, dataProd}) => {
             setPrecioTotal(precioTotal - precio);
         }
     };
+
+    useEffect(() => {
+        setPrecioTotal(precio)
+    },[precio])
 
     //INFORMACION QUE SE LE ENVIA AL CARRITO
     const productoDelCarrito = {

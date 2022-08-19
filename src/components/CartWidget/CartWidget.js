@@ -1,6 +1,7 @@
 import {FiShoppingCart} from "react-icons/fi";
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+const prodImages = require.context('../../assets', true);
 
 const CartWidget = () => {
     
@@ -26,7 +27,7 @@ const CartWidget = () => {
                         <h4>{producto.nombre}</h4>
                         <p>Precio: ${producto.precio}</p>
                         <p>Cantidad de productos: {producto.stockUsadoCarrito}</p>
-                        <img src={producto.imagen} alt="imagen del producto en el carrito"/>
+                        <img src={prodImages(`./${producto.imagen}`)} alt="imagen del producto en el carrito"/>
                         <button onClick={() => singleDelete(producto)}>X</button>
                     </div>
                 )

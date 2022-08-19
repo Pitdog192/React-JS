@@ -4,10 +4,12 @@ h1{
     text-align: center;
 }
 .itemContainer{
-    @extend %flex-row;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100vh;
     a{
         height: 400px;
-        width: calc(20% - 15px);
         margin: auto;
         text-decoration: none;
         color: black;
@@ -16,13 +18,12 @@ h1{
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            width: 100%;
-            height: 400px;
+            width: 90%;
+            height: 90%;
             padding: 20px;
             box-shadow: 4px 4px 4px black;
             font-size: 1.25em;
             text-align: center;
-            border: 1px solid rgba($color: #000000, $alpha: 0.1);
             img {
                 width: 80%;
             }

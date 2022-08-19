@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
-import Items from '../../utilities/ItemMock';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../../utils/firebaseConfig';
 
 const ItemListContainer = ({title}) => {
     
@@ -9,34 +10,32 @@ const ItemListContainer = ({title}) => {
     const [tituloContainer, setTituloContainer] = useState('');
     const {category} = useParams();
 
-
-    const productPromise = () => new Promise ((resolve) => {
-        setTimeout(()=>{
-            if(category){
-                const categoryFilter = Items.filter((itm) => itm.categoria === category );
-                setTituloContainer(category);
-                resolve(categoryFilter)
-            } else {
-                setTituloContainer('Todos los productos');
-                resolve(Items)
-            }
-        },20)
-    });
+    const fireProducts = async () => {
+        const productsCollection = collection(db, 'prods');
+        const snapShot = await getDocs(productsCollection);
+        const productList = snapShot.docs.map( (doc) => {
+            let product = doc.data()    
+            product.id = doc.id
+            return product
+        })
+        if(category){
+            const categoryFilter = productList.filter((prod)=> prod.categoria === category )
+            setTituloContainer(category)
+            return categoryFilter
+        } else {
+            setTituloContainer('Todos los productos')
+            return productList
+        }
+    }
 
     useEffect(() => {
-        const productProm = async () => {
-            try {
-                const correcto = await productPromise()
-                setListaProductos(correcto);   
-            }
-            catch {
-                console.log("Error")
-            }
-        }
-        productProm();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        },[category])
-
+        fireProducts()
+        .then((res) => {
+            setListaProductos(res)
+        })
+        // eslint-disable-next-line
+    },[category])
+    
     return (
         <div className="contenedorPrincipal">
             <h1 className="titulo"> {title} </h1>
