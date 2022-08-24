@@ -6,16 +6,17 @@ const ItemDetail = ({detailItem}) => {
   
   const [datos, setDatos] = useState({});
   const [itemQuantity, setItemQuantity] = useState(0);
+  const {nombre, imagen, precio, detalle, stock} = datos;
   
   useEffect(()=>{
     setDatos(detailItem);
   }, [detailItem]);
   
-  const {nombre, precio, detalle, stock} = datos;
 
   return (
     <div className="itemDetail">
         <h3>{nombre}</h3>
+        <img src={`./assets/${imagen}`} alt="Imagen de detalle" /> {/* NO FUNCIONA LA IMAGEN */}
         <p>Stock: {stock}</p>
         <p className='detalleProd'>{detalle}</p>
         <p className='detallePrecio'>Precio: ${precio}</p>

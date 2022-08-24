@@ -7,7 +7,8 @@ h1{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
+    align-content: space-between;
     a{
         height: 400px;
         margin: auto;
@@ -26,6 +27,7 @@ h1{
             text-align: center;
             img {
                 width: 80%;
+                height: 200px;
             }
             .textoPrecio{
                 font-size: 1.3em;
