@@ -14,9 +14,6 @@
         overflow: hidden;
         transition: transform .5s ease-in-out;
         -webkit-transition: transform .5s ease-in-out;
-        &:hover{
-            transform: scale(1.08);
-        }
     }
     h3{
         text-align: center;

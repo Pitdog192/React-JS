@@ -1,7 +1,7 @@
 import Home from './pages/Home';
 import NavBar from './components/NavBar/NavBar';
 import './Estilos/App.scss';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Contact from './pages/Contact';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Error from './components/Error/Error';
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
+      <Router>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />}/>
@@ -25,7 +25,7 @@ function App() {
           <Route path='*' element={<Error/>}/>
           <Route path='/cart' element={<CartComponent/>}/>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </CartProvider>
   );
 }

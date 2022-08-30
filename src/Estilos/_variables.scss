@@ -14,3 +14,8 @@ $red: rgb(250,0,0);
     display: flex;
     flex-direction: row;
 }  
+
+%flex-column{
+  display: flex;
+  flex-direction: column;
+}

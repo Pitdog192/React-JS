@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&display=swap");
+.divElementosCarrito, .contenedorTotal .contenedorBotones button, .contenedorTotal .contenedorBotones, .navBar .divMenu .menuNav, .navBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar {
+  width: 100%;
+  height: 145px;
+  justify-content: space-evenly;
+  background-color: black;
+}
+.navBar p {
+  color: white;
+}
+.navBar .brandSvg {
+  margin: none;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navBar .brandSvg svg {
+  color: rgb(250, 0, 0);
+  padding: 25px;
+  font-size: 3em;
+  margin: 10px 0px;
+}
+.navBar .brandSvg svg:hover {
+  transform: scale(1.2);
+}
+.navBar .tituloNav {
+  color: white;
+  padding: 15px;
+  align-self: center;
+  text-align: center;
+  font-size: 1.8em;
+}
+.navBar .divMenu {
+  display: flex;
+  align-items: center;
+}
+.navBar .divMenu .menuNav {
+  list-style: none;
+  flex-wrap: wrap;
+}
+.navBar .divMenu .menuNav li {
+  width: 130px;
+  height: 45px;
+  margin: 0px 5px;
+}
+.navBar .divMenu .menuNav li button {
+  color: white;
+  background-color: rgb(250, 0, 0);
+  width: 130px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.navBar .divMenu .menuNav li button:hover {
+  background-color: #F0A924;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+.navBar .divCarrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navBar .divCarrito .iconoCarrito {
+  color: rgb(250, 0, 0);
+  padding: 25px;
+  font-size: 3em;
+  margin: 10px 0px;
+}
+.navBar .divCarrito .iconoCarrito:hover {
+  transform: scale(1.2);
+}
+
+.divElementosCarrito, .contenedorTotal .contenedorBotones button, .contenedorTotal .contenedorBotones, .navBar, .navBar .divMenu .menuNav {
+  display: flex;
+  flex-direction: row;
+}
+
+.contenedorPrincipal {
+  height: 100vh;
+  width: calc(100vw - 25px);
+  margin: auto;
+}
+.contenedorPrincipal .titulo {
+  margin: 20px auto;
+  background-color: rgb(250, 0, 0);
+  text-align: center;
+  color: white;
+  width: 50%;
+  border-radius: 20px;
+}
+.contenedorPrincipal .divProductos {
+  display: flex;
+  flex-direction: column;
+}
+
+.divElementosCarrito, .contenedorTotal .contenedorBotones button, .contenedorTotal .contenedorBotones, .navBar, .navBar .divMenu .menuNav {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  text-align: center;
+}
+
+.itemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 90vh;
+  align-content: space-between;
+}
+.itemContainer a {
+  height: 400px;
+  margin: auto;
+  text-decoration: none;
+  color: black;
+}
+.itemContainer a .cardProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  box-shadow: 4px 4px 4px black;
+  font-size: 1.25em;
+  text-align: center;
+}
+.itemContainer a .cardProduct img {
+  width: 80%;
+  height: 200px;
+}
+.itemContainer a .cardProduct .textoPrecio {
+  font-size: 1.3em;
+}
+
+.contenedorTotal {
+  display: flex;
+  flex-direction: column;
+}
+.contenedorTotal button {
+  width: calc(100% - 40px);
+  margin: auto;
+  font-size: 0.9em;
+}
+.contenedorTotal .contenedorBotones {
+  justify-content: space-around;
+}
+.contenedorTotal .contenedorBotones p {
+  display: inline;
+}
+.contenedorTotal .contenedorBotones button {
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 0.9em;
+  margin: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0.1px solid black;
+  border-radius: 13px;
+}
+.contenedorTotal .contenedorBotones button:nth-child(1) {
+  background-color: rgb(245, 126, 126);
+}
+.contenedorTotal .contenedorBotones button:nth-child(1):hover {
+  background-color: rgb(255, 88, 88);
+  transform: scale(1.05);
+}
+.contenedorTotal .contenedorBotones button:nth-child(3) {
+  background-color: rgb(140, 247, 140);
+}
+.contenedorTotal .contenedorBotones button:nth-child(3):hover {
+  background-color: rgb(99, 253, 99);
+  transform: scale(1.05);
+}
+
+.detailContainer {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid red;
+}
+
+.itemDetail {
+  width: 90vw;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 2, 1fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+.itemDetail img {
+  width: 85%;
+  grid-column: 1/2;
+  grid-row: 1/8;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform 0.5s ease-in-out;
+}
+.itemDetail img:hover {
+  transform: scale(1.08);
+}
+.itemDetail h3 {
+  text-align: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  padding: 20px;
+  justify-self: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.itemDetail .contenedorTotal {
+  grid-column: 2/3;
+  grid-row: 6/8;
+  width: 50%;
+  justify-self: center;
+}
+.itemDetail .detalleProd {
+  grid-column: 2/3;
+  grid-row: 2/5;
+  padding: 20px;
+  align-self: center;
+}
+.itemDetail .detallePrecio {
+  text-transform: uppercase;
+  font-weight: bold;
+  grid-row: 5/6;
+}
+
+.divElementosCarrito {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+.divElementosCarrito p {
+  justify-content: center;
+}
+.divElementosCarrito svg {
+  color: rgb(250, 0, 0);
+  padding: 25px;
+  font-size: 3em;
+  margin: 10px 0px;
+}
+.divElementosCarrito svg:hover {
+  transform: scale(1.2);
+}
+.divElementosCarrito .cartDiv {
+  background-color: white;
+  font-size: 0.7em;
+  height: 250px;
+  width: 150px;
+}
+.divElementosCarrito .cartDiv img {
+  width: 100%;
+}
+.divElementosCarrito .cartDiv p {
+  color: black;
+}
+
+.carTotalComponent {
+  margin: 20px;
+}
+.carTotalComponent .carTotal {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 10px);
+  margin: auto;
+  padding: 10px;
+}
+.carTotalComponent .carTotal .carComponent {
+  width: 20%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid black;
+  margin: 5px;
+}
+.carTotalComponent .carTotal .carComponent img {
+  width: calc(100% - 5px);
+}
+.carTotalComponent .divForm {
+  margin: 5px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 3px 2px;
+  background-color: rgb(199, 199, 199);
+}
+.carTotalComponent .divForm input {
+  margin-right: 5px;
+  border-radius: 20px;
+  text-align: center;
+}
+.carTotalComponent .divForm button {
+  background-color: rgb(0, 110, 184);
+  border-radius: 20px;
+  width: 75px;
+  color: white;
+}
+.carTotalComponent .divForm button:hover {
+  background-color: rgb(1, 72, 119);
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  font-weight: 500;
+}/*# sourceMappingURL=App.css.map */

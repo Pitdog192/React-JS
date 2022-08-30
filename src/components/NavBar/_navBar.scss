@@ -12,6 +12,9 @@
     .brandSvg{
         margin: none;
         width: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         svg{
             color: $red;
             padding: 25px;
@@ -51,12 +54,26 @@
                     cursor: pointer;
                     &:hover{
                         background-color: #F0A924;
-                        transform: scale(1.1);
+                        transform: scale(1.03);
                         text-decoration: underline;
                     }
                 }
             }
 
+        }
+    }
+    .divCarrito{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .iconoCarrito{
+            color: $red;
+            padding: 25px;
+            font-size: 3em;
+            margin: 10px 0px;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
 }

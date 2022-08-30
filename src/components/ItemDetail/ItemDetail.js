@@ -10,13 +10,13 @@ const ItemDetail = ({detailItem}) => {
   
   useEffect(()=>{
     setDatos(detailItem);
-  }, [detailItem]);
+  }, [detailItem, datos]);
   
 
   return (
     <div className="itemDetail">
         <h3>{nombre}</h3>
-        <img src={`./assets/${imagen}`} alt="Imagen de detalle" /> {/* NO FUNCIONA LA IMAGEN */}
+        { !imagen ? <img src={`../../assets/${imagen}`} alt="Imagen de detalle" /> : <img src={require(`../../assets/${imagen}`)} alt="Imagen de detalle" />}
         <p>Stock: {stock}</p>
         <p className='detalleProd'>{detalle}</p>
         <p className='detallePrecio'>Precio: ${precio}</p>
