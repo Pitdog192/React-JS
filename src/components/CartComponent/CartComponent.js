@@ -10,7 +10,12 @@ const CartComponent = () => {
     const {cartProducts, totalProductos, precioTotalCarrito, clear, singleDelete} = useContext(CartContext);
     const [formulario, setFormulario] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [label, setLabel] = useState({
+        validacion: false,
+        claseInput: ""
+    });
     const [idOrder, setIdOrder] = useState();
+    const [comprobarEmail, setComprobarEmail] = useState('')
     // eslint-disable-next-line no-unused-vars
     const [datosEnviados, setDatosEnviados] = useState({
         items: cartProducts.map((producto) => {
@@ -47,7 +52,14 @@ const CartComponent = () => {
 
     const submitData = (e) => {
         e.preventDefault()
-        pushData({...datosEnviados, buyer: datosFormulario})
+        if(comprobarEmail !== datosFormulario.email){
+            setLabel({
+                validacion: true,
+                claseInput: 'error'
+            })
+        }else { 
+            pushData({...datosEnviados, buyer: datosFormulario})
+        }
     }
 
     const pushData = async (newOrder) => {
@@ -60,6 +72,10 @@ const CartComponent = () => {
             setFormulario(false)
             borrarCarrito()
         }
+    }
+
+    const email2 = (e) => {
+        setComprobarEmail(e.target.value)
     }
 
     return (
@@ -88,6 +104,8 @@ const CartComponent = () => {
                         <input onChange={handleChange} type="text" name="name" placeholder="Nombre" value={datosFormulario.name}/>
                         <input onChange={handleChange} type="number" name="phone" placeholder="Telefono" value={datosFormulario.phone}/>
                         <input onChange={handleChange} type="email" name="email" placeholder="Email" value={datosFormulario.email}/>
+                        <input onChange={email2} type="email" name="email2" placeholder="Reingrese Email" value={comprobarEmail} className={label.claseInput}/>
+                        {label.validacion && <p className="labelEmail">Las direcciones de Email deben coincidir</p>}
                         <button type="submit">Enviar</button>
                     </form>
                 </div>

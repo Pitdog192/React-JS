@@ -1,7 +1,7 @@
-const Error = () => {
+const Error = ({causa}) => {
   return (
     <>
-      <h1>Error, página no encontrada</h1>
+      {causa ? <h1>Error, Producto no encontrado</h1> : <h1>Error, página no encontrada</h1>}
     </>
   )
 }

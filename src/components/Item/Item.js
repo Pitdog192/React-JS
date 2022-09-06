@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 
 const prodImages = require.context('../../assets', true);
 
-const Item = ({data}) => {
-
+  const Item = ({data}) => {
   const {imagen, nombre, precio, stock, id} = data;
 
   return (

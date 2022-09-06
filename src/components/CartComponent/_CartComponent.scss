@@ -39,5 +39,15 @@
                 cursor: pointer;
             }
         }
+        .labelEmail{
+            color: red;
+            font-size: 0.8em;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .error{
+            border: 1px solid red;
+        }
     }
 }

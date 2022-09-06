@@ -16,7 +16,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />}/>
+          <Route exact path='/' element={<Home />}/>
           <Route path='/React-JS-Arroquigaray' element={<Home />}/>
           <Route path='/Contact' element={<Contact/>}/>
           <Route path='/Home/:id' element={<ItemDetailContainer/>}/>

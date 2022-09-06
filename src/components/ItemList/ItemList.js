@@ -1,7 +1,6 @@
 import Item from '../Item/Item';
 
 const ItemList = ({dataProductos, categoryTitle}) => {
-
     return (
         <>
             <h1>{categoryTitle}</h1>
